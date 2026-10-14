@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ปัณณวัฒน์ อ่อนกาสินธุ์ - Academic Portfolio | สาธารณสุขศาสตร์</title>
+
+    <!-- Google Fonts: Prompt & Inter for Modern Minimal Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Theme Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Prompt', 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #1e293b;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .modal-active {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#hero" class="flex items-center space-x-2 group">
+                <div class="w-9 h-9 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                    P
+                </div>
+                <span class="font-semibold text-slate-800 text-lg tracking-tight">PANNAWAT.O</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-brand-600 transition-colors">เกี่ยวกับฉัน</a>
+                <a href="#statement" class="hover:text-brand-600 transition-colors">แรงบันดาลใจ</a>
+                <a href="#education" class="hover:text-brand-600 transition-colors">ประวัติการศึกษา</a>
+                <a href="#activities" class="hover:text-brand-600 transition-colors">กิจกรรม</a>
+                <a href="#certificates" class="hover:text-brand-600 transition-colors">เกียรติบัตร</a>
+            </nav>
+
+            <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-brand-600 rounded-full hover:bg-brand-700 transition-all shadow-sm hover:shadow-md">
+                <i class="fa-regular me-2"></i> ติดต่อ
+            </a>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white/95 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-600 hover:text-brand-600 font-medium">เกี่ยวกับฉัน</a>
+            <a href="#statement" class="block py-2 text-slate-600 hover:text-brand-600 font-medium">แรงบันดาลใจ</a>
+            <a href="#education" class="block py-2 text-slate-600 hover:text-brand-600 font-medium">ประวัติการศึกษา</a>
+            <a href="#activities" class="block py-2 text-slate-600 hover:text-brand-600 font-medium">กิจกรรม</a>
+            <a href="#certificates" class="block py-2 text-slate-600 hover:text-brand-600 font-medium">เกียรติบัตร</a>
+            <a href="#contact" class="block text-center py-2.5 px-4 text-white bg-brand-600 rounded-full font-medium">ติดต่อ</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[85vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 relative overflow-hidden">
+            <!-- Subtle background decorative elements -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-100/50 rounded-full blur-3xl -z-10"></div>
+            
+            <div class="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <!-- Profile Image -->
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-teal-500 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                        <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-slate-100">
+                            <img src="https://pannawat16.github.io/Pannawat-_pf/image.png" alt="นายปัณณวัฒน์ อ่อนกาสินธุ์" class="w-full h-full object-cover object-top hover:scale-105 transition duration-500" onerror="if(this.src!='image.png'){this.src='image.png';}else{this.src='https://placehold.co/400x500/059669/ffffff?text=Pannawat+O.';}" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="md:col-span-7 text-center md:text-left space-y-5">
+                    <div class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200">
+                        <i class="fa-solid fa-graduation-cap me-2"></i> มุ่งสู่ คณะสาธารณสุขศาสตร์ มหาวิทยาลัยเกษตรศาสตร์
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        สวัสดีครับ ข้าพเจ้า <br>
+                        <span class="gradient-text">นายปัณณวัฒน์ อ่อนกาสินธุ์</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-light">
+                        นักเรียนผู้มีความมุ่งมั่น มีจิตสาธารณะ และพร้อมนำทักษะด้านการทำงานเป็นทีม การวางแผน และคุณธรรม มาขับเคลื่อนงานด้านสาธารณสุขเพื่อชุมชนอย่างยั่งยืน
+                    </p>
+
+                    <!-- Key Badges -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-2 pt-2">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium">ชื่อเล่น: เอ็ม</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium">อายุ 19 ปี</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium">แผนการเรียน วิทย์-คณิต</span>
+                        <span class="px-3 py-1 bg-brand-50 text-brand-800 rounded-lg text-sm font-medium">สภานักเรียน & จิตอาสา</span>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3">
+                        <a href="#activities" class="w-full sm:w-auto px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl shadow-md transition-all text-center">
+                            ดูผลงาน & กิจกรรม
+                        </a>
+                        <a href="#statement" class="w-full sm:w-auto px-6 py-3 border border-slate-300 hover:bg-slate-50 text-slate-700 font-medium rounded-xl transition-all text-center">
+                            อ่านแรงบันดาลใจ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statement of Purpose (คำนำ) -->
+        <section id="statement" class="py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-100">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Statement of Purpose</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">แรงบันดาลใจและความมุ่งมั่น</h3>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-brand-200 absolute top-6 left-6 -z-10"></i>
+                    <p class="text-slate-700 text-base sm:text-lg leading-relaxed mb-6">
+                        "ข้าพเจ้ามีความสนใจด้านสาธารณสุขจากประสบการณ์ที่เคยละเลยสุขภาพจนเจ็บป่วยบ่อย และทำให้คนรอบข้างป่วยไปด้วย จึงเริ่มศึกษาหาความรู้ด้านสุขภาพอย่างจริงจัง ประกอบกับการได้เห็นการทำงานของนักสาธารณสุขทั้งในโรงเรียนและชุมชนที่คอยให้ความรู้และดูแลผู้คน ทำให้ข้าพเจ้าเกิดความประทับใจเป็นอย่างมาก
+                    </p>
+                    <p class="text-slate-700 text-base sm:text-lg leading-relaxed mb-6">
+                        อีกทั้งการได้รับโอกาสเข้าร่วมกิจกรรมบำเพ็ญประโยชน์ สภานักเรียน และจิตอาสาพระราชทาน ทำให้ข้าพเจ้าได้เรียนรู้การทำงานเป็นทีม และเพาะพันธุ์จิตสาธารณะขึ้นในใจ ข้าพเจ้าตั้งใจพัฒนาตนเอง นำความรู้ไปใช้ประโยชน์ต่อสังคม เพื่อเป็นส่วนหนึ่งในการขับเคลื่อนงานสาธารณสุข สร้างสังคมที่เข้มแข็งและมีคุณภาพชีวิตที่ดีอย่างยั่งยืน"
+                    </p>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-6">
+                        <div>
+                            <p class="font-semibold text-slate-900">นายปัณณวัฒน์ อ่อนกาสินธุ์</p>
+                            <p class="text-sm text-slate-500">ผู้สมัคร คณะสาธารณสุขศาสตร์ มหาวิทยาลัยเกษตรศาสตร์</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 font-bold">
+                            <i class="fa-solid fa-heart-pulse text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Skills Section -->
+        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Profile & Abilities</h2>
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">ข้อมูลส่วนตัว และทักษะความสามารถ</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Personal Info Card -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-lg">
+                            <i class="fa-regular fa-id-card"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">ข้อมูลส่วนตัว</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                        <div class="p-3 bg-slate-50 rounded-xl">
+                            <span class="text-slate-500 block text-xs">ชื่อ-นามสกุล</span>
+                            <span class="font-medium text-slate-800">นายปัณณวัฒน์ อ่อนกาสินธุ์</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-xl">
+                            <span class="text-slate-500 block text-xs">ชื่อเล่น</span>
+                            <span class="font-medium text-slate-800">เอ็ม (M)</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-xl">
+                            <span class="text-slate-500 block text-xs">วันเกิด</span>
+                            <span class="font-medium text-slate-800">12 มิถุนายน 2550</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-xl">
+                            <span class="text-slate-500 block text-xs">อายุ</span>
+                            <span class="font-medium text-slate-800">19 ปี</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-xl">
+                            <span class="text-slate-500 block text-xs">สัญชาติ / ศาสนา</span>
+                            <span class="font-medium text-slate-800">ไทย / พุทธ</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-xl">
+                            <span class="text-slate-500 block text-xs">แผนการเรียน</span>
+                            <span class="font-medium text-slate-800">วิทยาศาสตร์ - คณิตศาสตร์</span>
+                        </div>
+                    </div>
+
+                    <!-- Family Summary -->
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <h5 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">ข้อมูลครอบครัว</h5>
+                        <p class="text-xs text-slate-600">บิดา: นายชินดง อ่อนกาสินธุ์ | มารดา: นางสาวอุทัย มูลผล</p>
+                    </div>
+                </div>
+
+                <!-- Skills & Competencies -->
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900">ทักษะและความสามารถเด่น</h4>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                        <i class="fa-regular fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-800 text-sm">การวางแผนและการจัดสรรเวลา</h5>
+                                        <p class="text-xs text-slate-500">สามารถบริหารเวลาเรียน กิจกรรมสภานักเรียน และงานจิตอาสาได้อย่างเป็นระบบ</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center shrink-0">
+                                        <i class="fa-regular fa-comments"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-800 text-sm">การสื่อสารและการประสานงาน</h5>
+                                        <p class="text-xs text-slate-500">สื่อสารและทำความเข้าใจกับผู้อื่นได้ดี มีทักษะการทำงานร่วมกับชุมชน</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition-colors">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-hand-holding-heart"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-800 text-sm">จิตสาธารณะและความอดทนสูง</h5>
+                                        <p class="text-xs text-slate-500">พร้อมทุ่มเทเพื่องานส่วนรวม ละมุนละม่อม มีความอดทนต่อสภาวะกดดัน</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-center">
+                        <span class="text-xs text-brand-700 font-medium bg-brand-50 px-3 py-1.5 rounded-full inline-block">
+                            <i class="fa-solid fa-award me-1"></i> สภานักเรียนโรงเรียนนาสวรรค์พิทยาคม
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education History Section -->
+        <section id="education" class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50/80 border-y border-slate-100">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Academic Background</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">ประวัติการศึกษา</h3>
+                </div>
+
+                <div class="relative border-l-2 border-brand-200 ml-4 sm:ml-32 space-y-10">
+                    <!-- Senior High School -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-600 border-4 border-white shadow"></div>
+                        <div class="hidden sm:block absolute -left-32 top-0 text-xs font-semibold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md">
+                            2566 - 2568
+                        </div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100 group-hover:border-brand-300 transition-colors">
+                            <span class="sm:hidden text-xs font-semibold text-brand-700 bg-brand-50 px-2 py-0.5 rounded mb-2 inline-block">2566 - 2568</span>
+                            <h4 class="text-lg font-bold text-slate-900">ระดับมัธยมศึกษาตอนปลาย (ม.4 - ม.6)</h4>
+                            <p class="text-sm font-medium text-brand-600">โรงเรียนนาสวรรค์พิทยาคม จ.บึงกาฬ</p>
+                            <p class="text-xs text-slate-500 mt-1">แผนการเรียน วิทยาศาสตร์ - คณิตศาสตร์</p>
+                            <div class="mt-3 text-xs text-slate-600 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                                <i class="fa-solid fa-check text-brand-500 me-1"></i> ปฏิบัติหน้าที่กรรมการสภานักเรียน และเข้าร่วมกิจกรรมพัฒนาคุณธรรมวิชาการอย่างต่อเนื่อง
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Junior High School -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+                        <div class="hidden sm:block absolute -left-32 top-0 text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
+                            มัธยมตอนต้น
+                        </div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+                            <h4 class="text-lg font-bold text-slate-900">ระดับมัธยมศึกษาตอนต้น (ม.1 - ม.3)</h4>
+                            <p class="text-sm font-medium text-slate-600">โรงเรียนนาสวรรค์พิทยาคม จ.บึงกาฬ</p>
+                        </div>
+                    </div>
+
+                    <!-- Primary School -->
+                    <div class="relative pl-6 sm:pl-8 group">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+                        <div class="hidden sm:block absolute -left-32 top-0 text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
+                            ประถมศึกษา
+                        </div>
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+                            <h4 class="text-lg font-bold text-slate-900">ระดับประถมศึกษา (ป.1 - ป.6)</h4>
+                            <p class="text-sm font-medium text-slate-600">โรงเรียนบ้านหนองตอ จ.บึงกาฬ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Activities & Social Contribution</h2>
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">กิจกรรมบำเพ็ญประโยชน์ & ประสบการณ์</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Activity 1 -->
+                <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-hands-holding-circle"></i>
+                        </div>
+                        <span class="text-xs font-medium text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">9 ตุลาคม 2566</span>
+                        <h4 class="text-lg font-bold text-slate-900 mt-2 mb-2">จิตอาสา "เราทำความดี ด้วยหัวใจ"</h4>
+                        <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-location-dot me-1"></i> ณ หอประชุมโรงเรียนบึงกาฬ</p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            เข้าร่วมโครงการจิตอาสาหน่วยพระราชทาน ร่วมบำเพ็ญประโยชน์ทำความสะอาดและเก็บขยะทั่วบริเวณโรงเรียนเพื่อสร้างสิ่งแวดล้อมที่สะอาดปลอดภัย
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 text-xs text-slate-500">
+                        <i class="fa-solid fa-tag me-1 text-brand-500"></i> จิตอาสาบำเพ็ญประโยชน์
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <span class="text-xs font-medium text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">8 สิงหาคม 2567</span>
+                        <h4 class="text-lg font-bold text-slate-900 mt-2 mb-2">กิจกรรมปลูกป่าทดแทน</h4>
+                        <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-location-dot me-1"></i> ณ หนองหลวง ต.นาสวรรค์</p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            ร่วมปลูกต้นไม้หลากหลายชนิดเพื่อเพิ่มพื้นที่สีเขียว ฟื้นฟูธรรมชาติ และสร้างความร่มรื่นอุดมสมบูรณ์ให้กับแหล่งน้ำบึงหนองหลวง
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 text-xs text-slate-500">
+                        <i class="fa-solid fa-tag me-1 text-emerald-500"></i> อนุรักษ์สิ่งแวดล้อม
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-dharmachakra"></i>
+                        </div>
+                        <span class="text-xs font-medium text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">27 - 30 พฤษภาคม 2568</span>
+                        <h4 class="text-lg font-bold text-slate-900 mt-2 mb-2">ค่ายคุณธรรม น้อมนำวิถีพุทธ</h4>
+                        <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-location-dot me-1"></i> ณ หอประชุม รรร.นาสวรรค์พิทยาคม</p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            ฝึกสมาธิ พัฒนาจิตใจ เรียนรู้หลักคุณธรรมและระเบียบวินัย เพื่อนำไปประยุกต์ใช้ในการดำเนินชีวิตและการทำงานร่วมกับผู้อื่นอย่างมีความสุข
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 text-xs text-slate-500">
+                        <i class="fa-solid fa-tag me-1 text-teal-500"></i> พัฒนาคุณธรรมและจิตใจ
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <span class="text-xs font-medium text-sky-600 bg-sky-50 px-2.5 py-1 rounded-full">ปีการศึกษา 2568</span>
+                        <h4 class="text-lg font-bold text-slate-900 mt-2 mb-2">คณะกรรมการสภานักเรียน</h4>
+                        <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-location-dot me-1"></i> โรงเรียนนาสวรรค์พิทยาคม</p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            ปฏิบัติหน้าที่ส่งเสริมกิจกรรมนักเรียน ช่วยเหลือการบริหารงานในโรงเรียน ประสานงานระหว่างครูและนักเรียน พัฒนารีดเดอร์ชิพและการทำงานทีม
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 text-xs text-slate-500">
+                        <i class="fa-solid fa-tag me-1 text-sky-500"></i> สภานักเรียน & ภาวะผู้นำ
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <span class="text-xs font-medium text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">25 - 26 กันยายน 2568</span>
+                        <h4 class="text-lg font-bold text-slate-900 mt-2 mb-2">ช่วยเหลือและอำนวยความสะดวกงาน ผอ.</h4>
+                        <p class="text-xs text-slate-500 mb-3"><i class="fa-solid fa-location-dot me-1"></i> โรงเรียนนาสวรรค์พิทยาคม</p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            ช่วยงานจัดจราจร ต้อนรับแขกผู้มีเกียรติ และอำนวยความสะดวกในงานเลี้ยงเกษียณอายุราชการของผู้อำนวยการโรงเรียน
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 text-xs text-slate-500">
+                        <i class="fa-solid fa-tag me-1 text-amber-500"></i> งานบริการและประสานงาน
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Showcase Section -->
+        <section id="certificates" class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50/80 border-t border-slate-100">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2">Honors & Achievements</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">เกียรติบัตรและความภาคภูมิใจ</h3>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button onclick="filterCert('all')" class="cert-filter-btn active px-4 py-2 rounded-xl text-xs font-medium bg-brand-600 text-white shadow-sm transition-all">ทั้งหมด</button>
+                    <button onclick="filterCert('academic')" class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">วิชาการ & ทักษะ</button>
+                    <button onclick="filterCert('volunteer')" class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">จิตอาสา & สภานักเรียน</button>
+                    <button onclick="filterCert('ethics')" class="cert-filter-btn px-4 py-2 rounded-xl text-xs font-medium bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">ต้านทุจริต & คุณธรรม</button>
+                </div>
+
+                <!-- Certificate Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Cert 1 -->
+                    <div class="cert-card volunteer bg-white rounded-2xl border border-slate-200 p-5 hover:border-brand-400 hover:shadow-md transition-all cursor-pointer" onclick="openCertModal('นักเรียนจิตอาสา วันสุนทรภู่', '26 มิถุนายน 2568', 'โรงเรียนนาสวรรค์พิทยาคม', 'ได้รับเกียรติบัตรเป็นนักเรียนจิตอาสา และเป็นคณะกรรมการดำเนินงาน โครงการวันสุนทรภู่และวันภาษาไทยแห่งชาติ ประจำปี 2568')">
+                        <div class="flex items-start justify-between">
+                            <span class="text-[10px] font-semibold text-brand-700 bg-brand-50 px-2 py-0.5 rounded">จิตอาสา</span>
+                            <span class="text-xs text-slate-400">26 มิ.ย. 2568</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base mt-3 mb-1">กรรมการวันสุนทรภู่ & ภาษาไทย</h4>
+                        <p class="text-xs text-slate-500 mb-3">โรงเรียนนาสวรรค์พิทยาคม</p>
+                        <p class="text-xs text-slate-600 line-clamp-2">ปฏิบัติหน้าที่เป็นนักเรียนจิตอาสาและคณะกรรมการดำเนินงานจัดกิจกรรมสุนทรภู่</p>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="cert-card ethics bg-white rounded-2xl border border-slate-200 p-5 hover:border-brand-400 hover:shadow-md transition-all cursor-pointer" onclick="openCertModal('หลักสูตรต้านทุจริต: พิทักษ์ป่าไม้', '2 มิถุนายน 2568', 'สำนักงาน ป.ป.ช.', 'ผ่านการเรียนรู้และทดสอบตามเกณฑ์หลักสูตรต้านทุจริตศึกษา เรื่อง การพิทักษ์ทรัพยากรป่าไม้ ระดับมัธยมศึกษาตอนปลาย')">
+                        <div class="flex items-start justify-between">
+                            <span class="text-[10px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">ต้านทุจริต</span>
+                            <span class="text-xs text-slate-400">2 มิ.ย. 2568</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base mt-3 mb-1">การพิทักษ์ทรัพยากรป่าไม้</h4>
+                        <p class="text-xs text-slate-500 mb-3">สำนักงาน ป.ป.ช.</p>
+                        <p class="text-xs text-slate-600 line-clamp-2">ผ่านการทดสอบหลักสูตรต้านทุจริตศึกษา เรื่องการพิทักษ์ทรัพยากรป่าไม้ ม.6</p>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="cert-card academic bg-white rounded-2xl border border-slate-200 p-5 hover:border-brand-400 hover:shadow-md transition-all cursor-pointer" onclick="openCertModal('Top 10 แข่งขันตอบปัญหาวิชาการ', '15-19 สิงหาคม 2566', 'สัปดาห์วิทยาศาสตร์และเทคโนโลยี', 'ได้รับรางวัล Top 10 ในกิจกรรมการแข่งขันตอบปัญหาวิชาการ ระดับมัธยมศึกษาตอนปลาย เนื่องในสัปดาห์วันวิทยาศาสตร์')">
+                        <div class="flex items-start justify-between">
+                            <span class="text-[10px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">วิชาการ</span>
+                            <span class="text-xs text-slate-400">ส.ค. 2566</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base mt-3 mb-1">Top 10 ตอบปัญหาวิชาการวิทย์</h4>
+                        <p class="text-xs text-slate-500 mb-3">สัปดาห์วิทยาศาสตร์และเทคโนโลยี</p>
+                        <p class="text-xs text-slate-600 line-clamp-2">ได้รับรางวัล Top 10 การตอบปัญหาวิชาการระดับมัธยมศึกษาตอนปลาย</p>
+                    </div>
+
+                    <!-- Cert 4 -->
+                    <div class="cert-card volunteer bg-white rounded-2xl border border-slate-200 p-5 hover:border-brand-400 hover:shadow-md transition-all cursor-pointer" onclick="openCertModal('ปฏิบัติหน้าที่สภานักเรียน', '27 กันยายน 2568', 'โรงเรียนนาสวรรค์พิทยาคม', 'ได้รับเกียรติบัตรแสดงว่าได้ปฏิบัติหน้าที่สภานักเรียน โรงเรียนนาสวรรค์พิทยาคม ประจำปีการศึกษา 2568 ด้วยความวิริยะอุตสาหะ')">
+                        <div class="flex items-start justify-between">
+                            <span class="text-[10px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded">สภานักเรียน</span>
+                            <span class="text-xs text-slate-400">27 ก.ย. 2568</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base mt-3 mb-1">ปฏิบัติหน้าที่สภานักเรียน</h4>
+                        <p class="text-xs text-slate-500 mb-3">โรงเรียนนาสวรรค์พิทยาคม</p>
+                        <p class="text-xs text-slate-600 line-clamp-2">ปฏิบัติหน้าที่สภานักเรียนประจำปีการศึกษา 2568 ด้วยความตั้งใจและเสียสละ</p>
+                    </div>
+
+                    <!-- Cert 5 -->
+                    <div class="cert-card ethics bg-white rounded-2xl border border-slate-200 p-5 hover:border-brand-400 hover:shadow-md transition-all cursor-pointer" onclick="openCertModal('ธรรมศึกษาชั้นเอก (มัธยมศึกษา)', '30 ธันวาคม 2566', 'แม่กองธรรมสนามหลวง', 'สอบไล่ได้ธรรมศึกษาชั้นเอก ระดับมัธยมศึกษา จากสนามหลวงแผนกธรรม ประกาศโดยแม่กองธรรมสนามหลวง')">
+                        <div class="flex items-start justify-between">
+                            <span class="text-[10px] font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">ธรรมศึกษา</span>
+                            <span class="text-xs text-slate-400">30 ธ.ค. 2566</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base mt-3 mb-1">ธรรมศึกษาชั้นเอก</h4>
+                        <p class="text-xs text-slate-500 mb-3">แม่กองธรรมสนามหลวง</p>
+                        <p class="text-xs text-slate-600 line-clamp-2">สอบไล่ได้ธรรมศึกษาชั้นเอก มัธยมศึกษา ประจำปีพุทธศักราช 2566</p>
+                    </div>
+
+                    <!-- Cert 6 -->
+                    <div class="cert-card academic bg-white rounded-2xl border border-slate-200 p-5 hover:border-brand-400 hover:shadow-md transition-all cursor-pointer" onclick="openCertModal('อบรมทักษะภาษาจีน', '13 กันยายน 2568', 'โรงเรียนนาสวรรค์พิทยาคม', 'ได้รับเกียรติบัตรเข้าร่วมการอบรม โครงการส่งเสริมทักษะด้านภาษาจีน ประจำปีการศึกษา 2568')">
+                        <div class="flex items-start justify-between">
+                            <span class="text-[10px] font-semibold text-rose-700 bg-rose-50 px-2 py-0.5 rounded">ภาษา</span>
+                            <span class="text-xs text-slate-400">13 ก.ย. 2568</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base mt-3 mb-1">อบรมทักษะด้านภาษาจีน</h4>
+                        <p class="text-xs text-slate-500 mb-3">โครงการส่งเสริมภาษาจีน 2568</p>
+                        <p class="text-xs text-slate-600 line-clamp-2">เข้าร่วมการอบรมเพื่อเพิ่มพูนทักษะการสื่อสารภาษาจีนเพิ่มเติม</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+            <div class="bg-gradient-to-br from-brand-900 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-500/20 rounded-full blur-2xl"></div>
+                
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3">ช่องทางการติดต่อ</h2>
+                <p class="text-slate-300 text-sm max-w-lg mx-auto mb-8 font-light">
+                    หากต้องการสอบถามข้อมูลเพิ่มเติมหรือติดตามผลงาน สามารถติดต่อผ่านช่องทางออนไลน์ได้ครับ
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- Email Badge -->
+                    <div class="flex items-center space-x-3 bg-white/10 hover:bg-white/20 transition-all px-5 py-3 rounded-2xl border border-white/10">
+                        <i class="fa-regular fa-envelope text-brand-400 text-lg"></i>
+                        <div class="text-left">
+                            <span class="text-[10px] text-slate-400 block uppercase tracking-wider">Email Address</span>
+                            <a href="mailto:Pannawatm16@gmail.com" class="text-sm font-medium hover:underline">Pannawatm16@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Facebook Badge -->
+                    <div class="flex items-center space-x-3 bg-white/10 hover:bg-white/20 transition-all px-5 py-3 rounded-2xl border border-white/10">
+                        <i class="fa-brands fa-facebook text-sky-400 text-lg"></i>
+                        <div class="text-left">
+                            <span class="text-[10px] text-slate-400 block uppercase tracking-wider">Facebook</span>
+                            <span class="text-sm font-medium">เอ็ม ณวัตน์</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-8 px-4 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Pannawat Onkasinthu. Academic Portfolio for Kasetsart University Application.</p>
+            <p class="text-slate-400">Designed with Minimal Modern Style | Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative animate-fadeIn">
+            <button onclick="closeCertModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-2">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl mb-4">
+                <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h3 id="modalTitle" class="text-lg font-bold text-slate-900 mb-1"></h3>
+            <p id="modalDate" class="text-xs text-brand-600 font-medium mb-1"></p>
+            <p id="modalIssuer" class="text-xs text-slate-500 mb-4"></p>
+            <div class="border-t border-slate-100 pt-3 mb-6">
+                <p id="modalDesc" class="text-sm text-slate-600 leading-relaxed"></p>
+            </div>
+            <button onclick="closeCertModal()" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-xl transition-colors">
+                ปิดหน้าต่าง
+            </button>
+        </div>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Certificate Category Filtering
+        function filterCert(category) {
+            const cards = document.querySelectorAll('.cert-card');
+            const btns = document.querySelectorAll('.cert-filter-btn');
+
+            btns.forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            });
+
+            event.target.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            event.target.classList.add('bg-brand-600', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Functionality
+        const certModal = document.getElementById('certModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDate = document.getElementById('modalDate');
+        const modalIssuer = document.getElementById('modalIssuer');
+        const modalDesc = document.getElementById('modalDesc');
+
+        function openCertModal(title, date, issuer, desc) {
+            modalTitle.innerText = title;
+            modalDate.innerText = "วันที่ได้รับ: " + date;
+            modalIssuer.innerText = "หน่วยงานผู้มอบ: " + issuer;
+            modalDesc.innerText = desc;
+            certModal.classList.remove('hidden');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeCertModal() {
+            certModal.classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === certModal) {
+                closeCertModal();
+            }
+        });
+    </script>
+</body>
+</html>
